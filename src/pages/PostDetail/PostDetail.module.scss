@@ -1,0 +1,122 @@
+.container {
+    position: relative;
+    left: 250px;
+    min-height: 500vh;
+    padding: 40px 30px;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px 32px;
+}
+
+.wrapper__icon {
+    width: 100%;
+    font-size: 26px;
+
+    .wrapper__icon-close {
+        cursor: pointer;
+    }
+}
+
+.wrapper__content {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+}
+
+.wrapper__content-img {
+    width: 70%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+
+    .wrapper__content-img-left {
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        transform: translateY(-50%);
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .wrapper__content-img-right {
+        position: absolute;
+        top: 50%;
+        right: 2px;
+        transform: translateY(-50%);
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.wrapper__content-text {
+    width: 30%;
+    padding-left: 32px;
+}
+
+.wrapper__content-avatar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 54px;
+        height: 54px;
+        margin-right: 16px;
+        border-radius: 50%;
+    }
+
+    p {
+        text-transform: capitalize;
+        font-size: 18px;
+    }
+}
+
+.wrapper__content-time {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    span:first-child {
+        margin-right: 4px;
+    }
+}
+
+.wrapper__content-title {
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 64px 0;
+    text-transform: capitalize;
+}
+
+.wrapper__content-category {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 450;
+    margin: 0 0 20px;
+    text-transform: capitalize;
+}
+
+.wrapper__content-price {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 20px;
+}
+
+.wrapper__content-description {
+    width: 100%;
+    font-size: 20px;
+    text-align: justify;
+}

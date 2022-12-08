@@ -81,7 +81,7 @@ function Sidebar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="">
+                            <Link to="/notifications">
                                 <FontAwesomeIcon icon={faBell} className={cx('icon')} />
                                 <span className={cx('text', 'nav-text')}>Notifications</span>
                             </Link>

@@ -1,7 +1,7 @@
 import { faChevronDown, faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
 // import { useState, useEffect } from 'react';
 
@@ -71,6 +71,11 @@ function Home() {
                         <p className={cx('posts__title')}>Post's title</p>
                         <p>Price : XXXXX VND</p>
                         <p>Merchandise type: Mertirial</p>
+                    </div>
+                    <div className={cx('posts__button')}>
+                        <Link to="/post_detail" className={cx('posts__button-link')}>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
             </div>
