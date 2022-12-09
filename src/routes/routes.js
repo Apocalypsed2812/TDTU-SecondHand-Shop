@@ -27,6 +27,8 @@ import InformationPost from '~/pages/InformationPost';
 import Information from '~/pages/Information';
 import Notifications from '~/pages/Notifications';
 import PostDetail from '~/pages/PostDetail';
+import History from '../pages/History';
+import Chat from '~/pages/Chat';
 // import { UserAdmin } from '~/pages/Admin/User';
 // import { CategoryAdmin } from '~/pages/Admin/Category';
 
@@ -38,6 +40,8 @@ const publicRoutes = [
     { path: '/information', component: InformationPost, layout: LayoutSidebar },
     { path: '/notifications', component: Notifications, layout: LayoutSidebar },
     { path: '/post_detail', component: PostDetail, layout: LayoutSidebar },
+    { path: '/history', component: History, layout: LayoutSidebar },
+    { path: '/chat', component: Chat, layout: LayoutSidebar },
     // { path: '/product_detail/:id', component: ProductDetail },
     // { path: '/cart', component: Cart },
     // { path: '/account', component: UserInfor, layout: LayoutSidebar },

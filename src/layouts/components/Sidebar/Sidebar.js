@@ -63,7 +63,7 @@ function Sidebar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="">
+                            <Link to="/chat">
                                 <FontAwesomeIcon icon={faCommentDots} className={cx('icon')} />
                                 <span className={cx('text', 'nav-text')}>Message</span>
                             </Link>
@@ -75,7 +75,7 @@ function Sidebar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="">
+                            <Link to="/history">
                                 <FontAwesomeIcon icon={faCartShopping} className={cx('icon')} />
                                 <span className={cx('text', 'nav-text')}>History</span>
                             </Link>
