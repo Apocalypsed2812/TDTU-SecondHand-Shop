@@ -94,7 +94,7 @@ function Login() {
 
                 if (res.data.email.includes('@student.tdtu.edu.vn')) {
                     localStorage.setItem(TOKEN_NAME, JSON.stringify(res.data));
-                    navigate('/');
+                    navigate('/home');
                 } else {
                     Swal.fire({
                         title: 'Error',

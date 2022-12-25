@@ -33,7 +33,8 @@ import Chat from '~/pages/Chat';
 // import { CategoryAdmin } from '~/pages/Admin/Category';
 
 const publicRoutes = [
-    { path: '/', component: Home, layout: LayoutSidebar },
+    { path: '/', component: Login, layout: LayoutNoneHeader },
+    { path: '/home', component: Home, layout: LayoutSidebar },
     { path: '/login', component: Login, layout: LayoutNoneHeader },
     { path: '/search', component: Search, layout: LayoutSidebar },
     { path: '/create_post', component: CreatePost, layout: LayoutSidebar },
