@@ -2,6 +2,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import Swal from 'sweetalert2';
 import classNames from 'classnames/bind';
+import { GoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
+import jwt_decode from 'jwt-decode';
+import axios from 'axios';
 
 import styles from './Login.module.scss';
 import { postMethod } from '../../utils/fetchData';
@@ -79,6 +83,31 @@ function Login() {
         handleLogin();
     };
 
+    const loginWithGoogle = useGoogleLogin({
+        onSuccess: async (response) => {
+            try {
+                const res = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
+                    headers: {
+                        Authorization: `Bearer ${response.access_token}`,
+                    },
+                });
+
+                if (res.data.email.includes('@student.tdtu.edu.vn')) {
+                    localStorage.setItem(TOKEN_NAME, JSON.stringify(res.data));
+                    navigate('/');
+                } else {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Vui lòng chọn email sinh viên TDTU',
+                        icon: 'error',
+                    });
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        },
+    });
+
     return (
         <div className={cx('container')}>
             <div className={cx('container__left')}>
@@ -87,10 +116,20 @@ function Login() {
             <div className={cx('container__right')}>
                 <div className={cx('container__right-wrapper')}>
                     <h2>Log in</h2>
-                    <button>
+                    <button onClick={loginWithGoogle}>
                         <img src={google} alt="google" className={cx('icon__google')} />
                         <span>Login with TDTU email</span>
                     </button>
+                    {/* <GoogleLogin
+                        onSuccess={(credentialResponse) => {
+                            // console.log(credentialResponse);
+                            var decoded = jwt_decode(credentialResponse.credential);
+                            console.log(decoded)
+                        }}
+                        onError={() => {
+                            console.log('Login Failed');
+                        }}
+                    /> */}
                 </div>
             </div>
         </div>

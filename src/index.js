@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './components/GlobalStyles';
@@ -8,11 +10,14 @@ import { DataProvider } from './context/GlobalState';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <DataProvider>
-            <GlobalStyles>
-                <App />
-            </GlobalStyles>
-        </DataProvider>
+        <GoogleOAuthProvider clientId="149021631271-qeichiafutr37rr83r5jejteumf3927j.apps.googleusercontent.com">
+            <DataProvider>
+                <GlobalStyles>
+                    <App />
+                </GlobalStyles>
+            </DataProvider>
+        </GoogleOAuthProvider>
+        ;
     </React.StrictMode>,
 );
 

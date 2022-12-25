@@ -7,6 +7,7 @@ import styles from './Home.module.scss';
 
 // import { getMethod } from '~/utils/fetchData';
 import avatar from '~/assets/images/avatar_post.jpg';
+import { TOKEN_NAME } from '~/credentials';
 
 const cx = classNames.bind(styles);
 
@@ -31,11 +32,16 @@ function Home() {
     //             console.log(err);
     //         });
     // }, []);
+    let data = localStorage.getItem(TOKEN_NAME);
+    data = JSON.parse(data);
 
     return (
         <>
             <div className={cx('container')}>
                 <div className={cx('header')}>
+                    <div className={cx('header__item')}>
+                        <span>Người dùng: {data.name}</span>
+                    </div>
                     <div className={cx('header__item')}>
                         <span>Mertirial</span>
                         <FontAwesomeIcon className={cx('header__item-icon')} icon={faChevronDown} />
