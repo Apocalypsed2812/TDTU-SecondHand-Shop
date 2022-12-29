@@ -120,6 +120,33 @@ function Sidebar() {
                 </div>
             </div>
         </nav>
+        // <section class="sidebar">
+        // <div class="sidebar__header">
+        //     <h1><i class="fa-solid fa-gift"></i><span>Sidebar</span></h1>
+        // </div>
+        // <div class="sidebar__menu">
+        //     <ul>
+        //         <li>
+        //             <a href=""><i class="fa-solid fa-house"></i><span>Home</span></a>
+        //         </li>
+        //         <li>
+        //             <a href=""><i class="fa-solid fa-comment"></i></i><span>Chat</span></a>
+        //         </li>
+        //         <li>
+        //             <a href=""><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
+        //         </li>
+        //         <li>
+        //             <a href=""><i class="fa-solid fa-clock-rotate-left"></i><span>History</span></a>
+        //         </li>
+        //         <li>
+        //             <a href=""><i class="fa-solid fa-user"></i><span>Account</span></a>
+        //         </li>
+        //         <li>
+        //             <a href=""><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+        //         </li>
+        //     </ul>
+        // </div>
+        // </section>
     );
 }
 
