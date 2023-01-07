@@ -32,16 +32,14 @@ function Home() {
     //             console.log(err);
     //         });
     // }, []);
-    let data = localStorage.getItem(TOKEN_NAME);
-    data = JSON.parse(data);
+    // let data = localStorage.getItem(TOKEN_NAME);
+    // data = JSON.parse(data);
 
     return (
         <>
             <div className={cx('container')}>
                 <div className={cx('header')}>
-                    <div className={cx('header__item')}>
-                        <span>Người dùng: {data.name}</span>
-                    </div>
+                    <div className={cx('header__item')}>{/* <span>Người dùng: {data.name}</span> */}</div>
                     <div className={cx('header__item')}>
                         <span>Mertirial</span>
                         <FontAwesomeIcon className={cx('header__item-icon')} icon={faChevronDown} />

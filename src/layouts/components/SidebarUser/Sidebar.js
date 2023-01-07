@@ -46,7 +46,7 @@ function Sidebar() {
             <div className={cx('sidebar__menu')}>
                 <ul>
                     <li>
-                        <Link to="/">
+                        <Link to="/home">
                             <FontAwesomeIcon icon={faHome} className={cx('icon')} />
                             <span>Home</span>
                         </Link>
