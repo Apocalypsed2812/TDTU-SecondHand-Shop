@@ -33,75 +33,79 @@ function Sidebar() {
         navigate('/login');
     };
     return (
-        <section className={cx('sidebar')}>
-            <header>
-                <div className={cx('image-text')}>
-                    <div className={cx('text', 'header-text')}>
-                        <span className={cx('name')}>TDTU</span>
-                        <span className={cx('name')}>Secondhand</span>
-                        <span className={cx('name')}>Shop</span>
+        <>
+            <input type="checkbox" id="navbar__mobile-header" className={cx('nav__input-header')} />
+            <label htmlFor="navbar__mobile-header" className={cx('container__header-overlay')}></label>
+            <section className={cx('sidebar')}>
+                <header>
+                    <div className={cx('image-text')}>
+                        <div className={cx('text', 'header-text')}>
+                            <span className={cx('name')}>TDTU</span>
+                            <span className={cx('name')}>Secondhand</span>
+                            <span className={cx('name')}>Shop</span>
+                        </div>
                     </div>
+                </header>
+                <div className={cx('sidebar__menu')}>
+                    <ul>
+                        <li>
+                            <Link to="/home">
+                                <FontAwesomeIcon icon={faHome} className={cx('icon')} />
+                                <span>Home</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/search">
+                                <FontAwesomeIcon icon={faSearch} className={cx('icon')} />
+                                <span>Search</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/chat">
+                                <FontAwesomeIcon icon={faCommentDots} className={cx('icon')} />
+                                <span>Message</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/create_post">
+                                <FontAwesomeIcon icon={faCalendarPlus} className={cx('icon')} />
+                                <span>Create Post</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/history">
+                                <FontAwesomeIcon icon={faCartShopping} className={cx('icon')} />
+                                <span>History</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/notifications">
+                                <FontAwesomeIcon icon={faBell} className={cx('icon')} />
+                                <span>Notifications</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/policy">
+                                <FontAwesomeIcon icon={faBuilding} className={cx('icon')} />
+                                <span>Policy</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/information">
+                                <FontAwesomeIcon icon={faCircleUser} className={cx('icon')} />
+                                <span>My Information</span>
+                            </Link>
+                        </li>
+                        <li onClick={handleLogout}>
+                            <Link to="">
+                                <FontAwesomeIcon icon={faRightFromBracket} className={cx('icon')} />
+                                <span>Logout</span>
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
-            </header>
-            <div className={cx('sidebar__menu')}>
-                <ul>
-                    <li>
-                        <Link to="/home">
-                            <FontAwesomeIcon icon={faHome} className={cx('icon')} />
-                            <span>Home</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/search">
-                            <FontAwesomeIcon icon={faSearch} className={cx('icon')} />
-                            <span>Search</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/chat">
-                            <FontAwesomeIcon icon={faCommentDots} className={cx('icon')} />
-                            <span>Message</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/create_post">
-                            <FontAwesomeIcon icon={faCalendarPlus} className={cx('icon')} />
-                            <span>Create Post</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/history">
-                            <FontAwesomeIcon icon={faCartShopping} className={cx('icon')} />
-                            <span>History</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/notifications">
-                            <FontAwesomeIcon icon={faBell} className={cx('icon')} />
-                            <span>Notifications</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="">
-                            <FontAwesomeIcon icon={faBuilding} className={cx('icon')} />
-                            <span>Policy</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/information">
-                            <FontAwesomeIcon icon={faCircleUser} className={cx('icon')} />
-                            <span>My Information</span>
-                        </Link>
-                    </li>
-                    <li onClick={handleLogout}>
-                        <Link to="">
-                            <FontAwesomeIcon icon={faRightFromBracket} className={cx('icon')} />
-                            <span>Logout</span>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        </section>
+            </section>
+        </>
     );
 }
 

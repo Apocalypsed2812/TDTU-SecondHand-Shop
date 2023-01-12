@@ -232,3 +232,28 @@ body.dark .menu-bar .mode i.moon {
 body.dark .switch::before {
     left: 24px;
 }
+
+// Sidebar in mobile
+.container__header-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.nav__input-header {
+    display: none;
+}
+
+.nav__input-header:checked ~ .sidebar {
+    display: block;
+}
+
+.nav__input-header:checked ~ .container__header-overlay {
+    display: block;
+}

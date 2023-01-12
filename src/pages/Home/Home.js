@@ -1,4 +1,4 @@
-import { faChevronDown, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronDown, faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -39,7 +39,11 @@ function Home() {
         <>
             <div className={cx('container')}>
                 <div className={cx('header')}>
-                    <div className={cx('header__item')}>{/* <span>Người dùng: {data.name}</span> */}</div>
+                    <div className={cx('')}>
+                        <label htmlFor="navbar__mobile-header">
+                            <FontAwesomeIcon className={cx('header__item-icon', 'header__item-mobile')} icon={faBars} />
+                        </label>
+                    </div>
                     <div className={cx('header__item')}>
                         <span>Mertirial</span>
                         <FontAwesomeIcon className={cx('header__item-icon')} icon={faChevronDown} />

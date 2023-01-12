@@ -1,4 +1,4 @@
-import { faChevronDown, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 // import { Link } from 'react-router-dom';
@@ -14,7 +14,12 @@ function CreatePost() {
     return (
         <>
             <div className={cx('container')}>
-                <h3 className={cx('container__title')}>Create your post</h3>
+                <div className={cx('container__header')}>
+                    <label htmlFor="navbar__mobile-header">
+                        <FontAwesomeIcon className={cx('header__item-icon', 'header__item-mobile')} icon={faBars} />
+                    </label>
+                    <h3 className={cx('container__title')}>Create your post</h3>
+                </div>
                 <form>
                     <div className={cx('container__left')}>
                         <div className={cx('container__file')}>
