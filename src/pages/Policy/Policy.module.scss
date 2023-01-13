@@ -9,3 +9,24 @@
     font-size: 30px;
     font-weight: 550;
 }
+
+.container__wrapper {
+    padding: 0 60px;
+
+    .container__wrapper-heading {
+        font-size: 22px;
+        font-weight: 600;
+        padding: 12px 0;
+    }
+
+    .container__list,
+    .container__list-sub {
+        padding: 0 24px;
+        line-height: 26px;
+        text-align: justify;
+    }
+
+    .container__item {
+        padding-bottom: 12px;
+    }
+}
