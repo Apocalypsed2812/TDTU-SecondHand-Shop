@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import Swal from 'sweetalert2';
 // import { Link } from 'react-router-dom';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faBars } from '@fortawesome/free-solid-svg-icons';
 
 // import { getMethod, postMethod } from '~/utils/fetchData';
 // import { GlobalState } from '~/context/GlobalState';
@@ -14,6 +14,9 @@ const cx = classNames.bind(styles);
 function History() {
     return (
         <div className={cx('container')}>
+            <label htmlFor="navbar__mobile-header" className={cx('navigation__mobile')}>
+                <FontAwesomeIcon className={cx('header__item-icon', 'header__item-mobile')} icon={faBars} />
+            </label>
             <h3 className={cx('container__title')}>Product is bought</h3>
             <div className={cx('container__wrapper')}>
                 <div className={cx('grid', 'wide')}>

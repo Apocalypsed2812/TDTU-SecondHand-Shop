@@ -1,5 +1,5 @@
 .container {
-    // position: relative;
+    position: relative;
     // left: 250px;
     min-height: 500vh;
 
@@ -32,6 +32,19 @@
             margin-top: 8px;
             color: yellow;
         }
+    }
+}
+
+.navigation__mobile {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    display: none;
+}
+
+@media (max-width: 739px) {
+    .navigation__mobile {
+        display: block;
     }
 }
 

@@ -1,5 +1,13 @@
 .container {
     min-height: 500vh;
+    position: relative;
+}
+
+.navigation__mobile {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    display: none;
 }
 
 .container__title {
@@ -28,5 +36,26 @@
 
     .container__item {
         padding-bottom: 12px;
+    }
+}
+
+.container__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+@media (max-width: 739px) {
+    .container__grid {
+        display: block;
+    }
+
+    .navigation__mobile {
+        display: block;
     }
 }

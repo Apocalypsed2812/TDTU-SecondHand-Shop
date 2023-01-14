@@ -1,4 +1,4 @@
-import { faStar, faPen, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faPen, faEye, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 // import { Link } from 'react-router-dom';
@@ -14,6 +14,9 @@ function Information() {
     return (
         <>
             <div className={cx('container')}>
+                <label htmlFor="navbar__mobile-header" className={cx('navigation__mobile')}>
+                    <FontAwesomeIcon className={cx('header__item-icon', 'header__item-mobile')} icon={faBars} />
+                </label>
                 <div className={cx('container__header')}>
                     <img src={avatar} alt="" className={cx('container__header-img')} />
                     <div className={cx('container__header-avatar')}>

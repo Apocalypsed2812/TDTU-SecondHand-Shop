@@ -14,10 +14,13 @@ function CreatePost() {
     return (
         <>
             <div className={cx('container')}>
+                <label htmlFor="navbar__mobile-header" className={cx('navigation__mobile')}>
+                    <FontAwesomeIcon className={cx('header__item-icon', 'header__item-mobile')} icon={faBars} />
+                </label>
                 <div className={cx('container__header')}>
-                    <label htmlFor="navbar__mobile-header">
+                    {/* <label htmlFor="navbar__mobile-header">
                         <FontAwesomeIcon className={cx('header__item-icon', 'header__item-mobile')} icon={faBars} />
-                    </label>
+                    </label> */}
                     <h3 className={cx('container__title')}>Create your post</h3>
                 </div>
                 <form>

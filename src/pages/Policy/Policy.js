@@ -1,4 +1,4 @@
-import { faStar, faPen, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 // import { Link } from 'react-router-dom';
@@ -14,6 +14,9 @@ function Policy() {
     return (
         <>
             <div className={cx('container')}>
+                <label htmlFor="navbar__mobile-header" className={cx('navigation__mobile')}>
+                    <FontAwesomeIcon className={cx('header__item-icon', 'header__item-mobile')} icon={faBars} />
+                </label>
                 <h3 className={cx('container__title')}>Policy</h3>
                 <div className={cx('container__wrapper')}>
                     <div className={cx('container__wrapper-heading')}>
@@ -155,6 +158,98 @@ function Policy() {
                             <b>Mặt hàng đã hết hạn sử dụng tại thời điểm đăng tin.</b>
                         </li>
                     </ul>
+                    <hr></hr>
+                    <div className={cx('container__wrapper-heading', 'mt-32')}>Giá bán sản phẩm:</div>
+                    <div className={cx('container__grid')}>
+                        <div className={cx('container__grid-item')}>
+                            <div className={cx('container__wrapper-heading', 'uppercase')}>Cho phép</div>
+                            <ul className={cx('container__list')}>
+                                <li>
+                                    Theo Pháp lệnh Ngoại hối của Nhà nước, mọi Tin đăng trên website Chợ Tốt chỉ được
+                                    niêm yết giá tiền đồng Việt
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={cx('container__grid-item')}>
+                            <div className={cx('container__wrapper-heading', 'uppercase')}>Không cho phép</div>
+                            <ul className={cx('container__list')}>
+                                <li>Giá ngoại tệ</li>
+                                <li>
+                                    Giá bán trong ô giá không điền đầy đủ theo giá tiền VNĐ. Ví dụ: “100 triệu VNĐ” cần
+                                    điền đầy đủ là “100.000.000”, không ghi “100.000”
+                                </li>
+                                <li>Giá bán không hợp lý với thị trường</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className={cx('container__wrapper-heading', 'mt-32')}>Tiêu đề tin đăng:</div>
+                    <div className={cx('container__grid')}>
+                        <div className={cx('container__grid-item')}>
+                            <div className={cx('container__wrapper-heading', 'uppercase')}>Cho phép</div>
+                            <ul className={cx('container__list')}>
+                                <li>
+                                    Tựa đề tin cần thể hiện rõ sản phẩm cần bán và phải phân biệt được với các tin đã và
+                                    đang bán
+                                </li>
+                                <li>Tựa đề tốt bao gồm: model sản phẩm + màu sắc + tình trạng</li>
+                                <li>
+                                    Ví dụ: Tranh sơn mài khảm trai Lã Vọng; đàn guitar acoustic đệm hát KP10 màu xanh
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={cx('container__grid-item')}>
+                            <div className={cx('container__wrapper-heading', 'uppercase')}>Không cho phép</div>
+                            <ul className={cx('container__list')}>
+                                <li>Giá, website, tên hoặc thông tin liên lạc của Người bán</li>
+                                <li>
+                                    Các từ ngữ miêu tả nhằm thu hút sự chú ý của Người mua như: siêu rẻ, siêu hot, hot
+                                </li>
+                                <li>
+                                    Theo điều 8 mục 11 của Luật Quảng cáo, không được sử dụng các từ ngữ “nhất”, “duy
+                                    nhất”, “tốt nhất”, “số một” hoặc từ ngữ có ý nghĩa tương tự trong nội dung Tin đăng
+                                    (nếu sử dụng phải có tài liệu chứng minh)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className={cx('container__wrapper-heading', 'mt-32')}>Nội dung tin đăng:</div>
+                    <div className={cx('container__grid')}>
+                        <div className={cx('container__grid-item')}>
+                            <div className={cx('container__wrapper-heading', 'uppercase')}>Cho phép</div>
+                            <ul className={cx('container__list')}>
+                                <li>
+                                    Cần cung cấp một số đặc điểm nhận diện sản phẩm: tên máy, thương hiệu, model, xuất
+                                    xứ (mua tại đâu, hàng Việt Nam hay hàng nhập, nếu nhập thì từ nước nào?)
+                                </li>
+                                <li>
+                                    Miêu tả thêm về các đặc điểm đã sử dụng: sử dụng được bao lâu, máy có zin hay thay
+                                    thế gì không, có hư hỏng, trầy xước gì không, sản phẩm còn bảo hành không, có phụ
+                                    kiện gì kèm theo không, v.v
+                                </li>
+                                <li>
+                                    Các thông tin khác: giá bán (đồng ý thương lượng không?), lý do bán sản phẩm, có cam
+                                    kết gì sau bán không (chế độ bảo hành, đổi trả, v.v), v.v
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={cx('container__grid-item')}>
+                            <div className={cx('container__wrapper-heading', 'uppercase')}>Không cho phép</div>
+                            <ul className={cx('container__list')}>
+                                <li>
+                                    Theo điều 8 mục 11 của Luật Quảng cáo, không được sử dụng các từ ngữ “nhất”, “duy
+                                    nhất”, “tốt nhất”, “số một” hoặc từ ngữ có ý nghĩa tương tự trong nội dung tin đăng
+                                    (nếu sử dụng phải có tài liệu chứng minh)
+                                </li>
+                                <li>Tin rao không nhằm mục đích mua bán</li>
+                                <li>
+                                    Số điện thoại, các đường dẫn kết nối đến trang khác, email có chứa tên miền website
+                                    khác
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

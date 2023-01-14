@@ -1,9 +1,22 @@
 .container {
-    // position: relative;
+    position: relative;
     // left: 250px;
     display: flex;
     padding-bottom: 40px;
     min-height: 500vh;
+}
+
+.navigation__mobile {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    display: none;
+}
+
+@media (max-width: 739px) {
+    .navigation__mobile {
+        display: block;
+    }
 }
 
 .container__left {

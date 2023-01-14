@@ -1,5 +1,5 @@
 .container {
-    // position: relative;
+    position: relative;
     // left: 250px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,19 @@
         width: 100%;
         min-height: 400vh;
         display: flex;
+    }
+}
+
+.navigation__mobile {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    display: none;
+}
+
+@media (max-width: 739px) {
+    .navigation__mobile {
+        display: block;
     }
 }
 
