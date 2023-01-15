@@ -11,12 +11,6 @@
     display: none;
 }
 
-@media (max-width: 739px) {
-    .navigation__mobile {
-        display: block;
-    }
-}
-
 .container__title {
     width: 100%;
     text-align: center;
@@ -82,5 +76,20 @@
     p {
         font-size: 18px;
         font-weight: 550;
+    }
+}
+
+@media (max-width: 739px) {
+    .navigation__mobile {
+        display: block;
+    }
+
+    .container__title {
+        font-size: 24px;
+        line-height: 100px;
+    }
+
+    .hide-on-mobile {
+        display: none;
     }
 }

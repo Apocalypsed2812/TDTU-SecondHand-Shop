@@ -1,7 +1,7 @@
 import { faStar, faChevronDown, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './InformationPost.module.scss';
 // import { useState, useEffect } from 'react';
 
@@ -34,8 +34,12 @@ function InformationPost() {
                 <div className={cx('container__content')}>
                     <div className={cx('container__wrapper')}>
                         <div className={cx('container__wrapper-header')}>
-                            <div>Your Information</div>
-                            <div>Your Post</div>
+                            <div>
+                                <Link to="/information">Your Information</Link>
+                            </div>
+                            <div>
+                                <Link to="/information_post">Your Post</Link>
+                            </div>
                         </div>
                         <div className={cx('container__wrapper-choose')}>
                             <div className={cx('container__wrapper-item')}>
@@ -47,16 +51,16 @@ function InformationPost() {
                         <div className={cx('container__wrapper-content')}>
                             <div className={cx('grid', 'wide')}>
                                 <div className={cx('row')}>
-                                    <div className={cx('col', 'l-4')}>
+                                    <div className={cx('col', 'l-4', 'm-12', 'c-12')}>
                                         <div className={cx('content__item')}></div>
                                     </div>
-                                    <div className={cx('col', 'l-4')}>
+                                    <div className={cx('col', 'l-4', 'm-12', 'c-12')}>
                                         <div className={cx('content__item')}></div>
                                     </div>
-                                    <div className={cx('col', 'l-4')}>
+                                    <div className={cx('col', 'l-4', 'm-12', 'c-12')}>
                                         <div className={cx('content__item')}></div>
                                     </div>
-                                    <div className={cx('col', 'l-4')}>
+                                    <div className={cx('col', 'l-4', 'm-12', 'c-12')}>
                                         <div className={cx('content__item')}></div>
                                     </div>
                                 </div>

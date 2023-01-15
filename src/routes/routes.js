@@ -19,7 +19,7 @@ import Login from '~/pages/Login';
 import Search from '~/pages/Search';
 import CreatePost from '~/pages/CreatePost';
 import InformationPost from '~/pages/InformationPost';
-// import Information from '~/pages/Information';
+import Information from '~/pages/Information';
 import Notifications from '~/pages/Notifications';
 import PostDetail from '~/pages/PostDetail';
 import History from '../pages/History';
@@ -32,7 +32,8 @@ const publicRoutes = [
     { path: '/login', component: Login, layout: LayoutNoneHeader },
     { path: '/search', component: Search, layout: LayoutSidebar },
     { path: '/create_post', component: CreatePost, layout: LayoutSidebar },
-    { path: '/information', component: InformationPost, layout: LayoutSidebar },
+    { path: '/information', component: Information, layout: LayoutSidebar },
+    { path: '/information_post', component: InformationPost, layout: LayoutSidebar },
     { path: '/notifications', component: Notifications, layout: LayoutSidebar },
     { path: '/post_detail', component: PostDetail, layout: LayoutSidebar },
     { path: '/history', component: History, layout: LayoutSidebar },

@@ -54,10 +54,10 @@ function Search() {
                 <div className={cx('content')}>
                     <div className={cx('grid', 'wide')}>
                         <div className={cx('row')}>
-                            <div className={cx('col', 'l-6')}>
+                            <div className={cx('col', 'l-6', 'm-12')}>
                                 <div className={cx('content__item')}></div>
                             </div>
-                            <div className={cx('col', 'l-6')}>
+                            <div className={cx('col', 'l-6', 'm-12')}>
                                 <div className={cx('content__item')}></div>
                             </div>
                         </div>

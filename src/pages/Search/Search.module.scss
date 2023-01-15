@@ -16,12 +16,6 @@
     display: none;
 }
 
-@media (max-width: 739px) {
-    .navigation__mobile {
-        display: block;
-    }
-}
-
 .header {
     width: 100%;
     height: 100px;
@@ -158,4 +152,20 @@
     width: 400px;
     height: 300px;
     background-color: #ccc;
+    margin-bottom: 20px;
+}
+
+// Mobile
+@media (max-width: 739px) {
+    .navigation__mobile {
+        display: block;
+    }
+
+    .info__right {
+        display: none;
+    }
+
+    .content {
+        margin: 42px 32px;
+    }
 }

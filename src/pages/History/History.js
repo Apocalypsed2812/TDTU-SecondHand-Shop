@@ -76,7 +76,7 @@ function History() {
                             </div>
                         </div>
                         <div className={cx('container__wrapper-item')}>
-                            <div className={cx('col', 'l-4')}>
+                            <div className={cx('col', 'l-4', 'hide-on-mobile')}>
                                 <p>Vote rating for NHÀ BẢO 2000m2</p>
                             </div>
                             <div className={cx('col', 'l-4')}>
