@@ -9,8 +9,8 @@ import Swal from 'sweetalert2';
 //import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { GlobalState } from '~/context/GlobalState';
 import styles from './Header.module.scss';
-import Search from '../Search';
-import Auth from '../Auth';
+// import Search from '../Search';
+// import Auth from '../Auth';
 
 const cx = classNames.bind(styles);
 
@@ -59,7 +59,7 @@ function Header() {
 
     return (
         <>
-            <header className={cx('wrapper')}>
+            {/* <header className={cx('wrapper')}>
                 <div className={cx('inner')}>
                     <Link to="/" className={cx('logo-link')}>
                         <img
@@ -89,7 +89,7 @@ function Header() {
                         </div>
                     </div>
                 </div>
-            </header>
+            </header> */}
 
             {showModalLogin && (
                 <div className={cx('modal', 'modal-login')}>

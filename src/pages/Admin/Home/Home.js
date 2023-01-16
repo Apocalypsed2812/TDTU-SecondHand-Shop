@@ -17,7 +17,7 @@ import { useEffect, useState } from 'react';
 //import { storage } from '~/firebase.js';
 import styles from './Home.module.scss';
 import { getMethod } from '~/utils/fetchData';
-import { HeaderAdmin } from '~/layouts/components/HeaderAdmin';
+// import { HeaderAdmin } from '~/components/HeaderAdmin';
 
 const cx = classNames.bind(styles);
 
@@ -29,11 +29,7 @@ function Home({ isAdmin }) {
         //     navigate('/');
         // }
     }, []);
-    return (
-        <>
-            <HeaderAdmin />
-        </>
-    )
+    return <>{/* <HeaderAdmin /> */}</>;
 }
 
 export default Home;

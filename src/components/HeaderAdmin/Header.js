@@ -23,8 +23,8 @@ import Swal from 'sweetalert2';
 
 //import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './HeaderAdmin.module.scss';
-import Search from '../Search';
-import Auth from '../Auth';
+// import Search from '../Search';
+// import Auth from '../Auth';
 import { GlobalState } from '~/context/GlobalState';
 
 const cx = classNames.bind(styles);
