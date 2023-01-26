@@ -5,26 +5,26 @@ import {
     faCartShopping,
     faCircleUser,
     faCommentDots,
-    faGift,
     faHome,
     faRightFromBracket,
     faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 
 import { GlobalState } from '~/context/GlobalState';
 import styles from './Sidebar.module.scss';
+import './Sidebar.css';
 
 const cx = classNames.bind(styles);
 
 function Sidebar() {
     const navigate = useNavigate();
     const state = useContext(GlobalState);
-    const [isLogin, setIsLogin] = state.UserAPI.login;
-    const [isAdmin, setIsAdmin] = state.UserAPI.admin;
+    const setIsLogin = state.UserAPI.login[1];
+    const setIsAdmin = state.UserAPI.admin[1];
 
     const handleLogout = () => {
         localStorage.clear();
@@ -49,52 +49,52 @@ function Sidebar() {
                 <div className={cx('sidebar__menu')}>
                     <ul>
                         <li>
-                            <Link to="/home">
+                            <NavLink to="/home" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faHome} className={cx('icon')} />
                                 <span>Home</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/search">
+                            <NavLink to="/search" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faSearch} className={cx('icon')} />
                                 <span>Search</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/chat">
+                            <NavLink to="/chat" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faCommentDots} className={cx('icon')} />
                                 <span>Message</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/create_post">
+                            <NavLink to="/create_post" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faCalendarPlus} className={cx('icon')} />
                                 <span>Create Post</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/history">
+                            <NavLink to="/history" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faCartShopping} className={cx('icon')} />
                                 <span>History</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/notifications">
+                            <NavLink to="/notifications" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faBell} className={cx('icon')} />
                                 <span>Notifications</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/policy">
+                            <NavLink to="/policy" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faBuilding} className={cx('icon')} />
                                 <span>Policy</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/information">
+                            <NavLink to="/information" activeClassName={cx('active')}>
                                 <FontAwesomeIcon icon={faCircleUser} className={cx('icon')} />
                                 <span>My Information</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li onClick={handleLogout}>
                             <Link to="">

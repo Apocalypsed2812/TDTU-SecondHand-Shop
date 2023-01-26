@@ -54,58 +54,58 @@ function Sidebar() {
                                 <input type="search" placeholder="Search..." />
                             </li> */}
                             <li>
-                                <Link to="/">
+                                <NavLink to="/" activeclassName=Ơ>
                                     <FontAwesomeIcon icon={faHome} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>Home</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/search">
+                                <NavLink to="/search">
                                     <FontAwesomeIcon icon={faSearch} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>Search</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/chat">
+                                <NavLink to="/chat">
                                     <FontAwesomeIcon icon={faCommentDots} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>Message</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/create_post">
+                                <NavLink to="/create_post">
                                     <FontAwesomeIcon icon={faCalendarPlus} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>Create Post</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/history">
+                                <NavLink to="/history">
                                     <FontAwesomeIcon icon={faCartShopping} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>History</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/notifications">
+                                <NavLink to="/notifications">
                                     <FontAwesomeIcon icon={faBell} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>Notifications</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="">
+                                <NavLink to="">
                                     <FontAwesomeIcon icon={faBuilding} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>Policy</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/information">
+                                <NavLink to="/information">
                                     <FontAwesomeIcon icon={faCircleUser} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>My Information</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li onClick={handleLogout}>
-                                <Link to="">
+                                <NavLink to="">
                                     <FontAwesomeIcon icon={faRightFromBracket} className={cx('icon')} />
                                     <span className={cx('text', 'nav-text')}>Logout</span>
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
