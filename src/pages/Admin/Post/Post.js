@@ -1,13 +1,13 @@
 import classNames from 'classnames/bind';
 
-import styles from './User.module.scss';
+import styles from './Post.module.scss';
 
 const cx = classNames.bind(styles);
 
-function User() {
+function Post() {
     return (
         <div className={cx('container')}>
-            <h1>Quản Lý Người Dùng</h1>
+            <h1>Quản Lý Bài Đăng</h1>
             <div className={cx('wrapper')}>
                 <table className={cx('table-users')}>
                     <thead>
@@ -44,4 +44,4 @@ function User() {
     );
 }
 
-export default User;
+export default Post;

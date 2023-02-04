@@ -7,14 +7,14 @@
 
 // Layout
 import LayoutSidebar from '~/layouts/LayoutSidebar';
-// import LayoutAdmin from '~/layouts/LayoutAdmin';
+import LayoutAdmin from '~/layouts/LayoutAdmin';
 import LayoutNoneHeader from '~/layouts/LayoutNoneHeader';
 
 //Pages
 import Home from '~/pages/Home';
 import { HomeAdmin } from '~/pages/Admin/Home';
-import { ProductAdmin } from '~/pages/Admin/Product';
-import AddProduct from '~/pages/Admin/AddProduct';
+import { PostAdmin } from '~/pages/Admin/Post';
+import { UserAdmin } from '~/pages/Admin/User';
 import Login from '~/pages/Login';
 import Search from '~/pages/Search';
 import CreatePost from '~/pages/CreatePost';
@@ -39,13 +39,9 @@ const publicRoutes = [
     { path: '/history', component: History, layout: LayoutSidebar },
     { path: '/chat', component: Chat, layout: LayoutSidebar },
     { path: '/policy', component: Policy, layout: LayoutSidebar },
-    // { path: '/product_detail/:id', component: ProductDetail },
-    // { path: '/cart', component: Cart },
-    // { path: '/account', component: UserInfor, layout: LayoutSidebar },
-    // { path: '/order', component: Order, layout: LayoutSidebar },
-    { path: '/admin', component: HomeAdmin, layout: LayoutSidebar },
-    { path: '/admin/product', component: ProductAdmin, layout: LayoutSidebar },
-    { path: '/admin/add_product', component: AddProduct, layout: LayoutSidebar },
+    { path: '/admin', component: HomeAdmin, layout: LayoutAdmin },
+    { path: '/admin/post', component: PostAdmin, layout: LayoutAdmin },
+    { path: '/admin/user', component: UserAdmin, layout: LayoutAdmin },
 ];
 
 const privateRoutes = [];

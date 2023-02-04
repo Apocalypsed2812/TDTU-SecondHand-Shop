@@ -1,18 +1,15 @@
 import classNames from 'classnames/bind';
 
 import styles from './LayoutAdmin.module.scss';
-import { HeaderAdmin } from '../components/HeaderAdmin';
-import Footer from '../components/Footer';
-import Sidebar from '../components/Sidebar';
+import SidebarAdmin from '~/components/SidebarAdmin';
 
 const cx = classNames.bind(styles);
 
 function LayoutAdmin({ children }) {
     return (
         <div>
-            <HeaderAdmin />
-            <div className={cx('container')}> {children}</div>
-            <Footer />
+            <SidebarAdmin />
+            <div className={cx('container')}>{children}</div>
         </div>
     );
 }

@@ -21,6 +21,11 @@ th {
     text-overflow: ellipsis;
 }
 
+.wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
 .container {
     padding: 30px 40px;
 
@@ -28,11 +33,6 @@ th {
         text-align: center;
         margin: 40px 80px;
     }
-}
-
-.wrapper {
-    width: 100%;
-    overflow-x: auto;
 }
 
 @media screen and (min-width: 1024px) {
