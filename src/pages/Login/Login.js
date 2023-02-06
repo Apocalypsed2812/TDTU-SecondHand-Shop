@@ -93,8 +93,37 @@ function Login() {
                 });
 
                 if (res.data.email.includes('@student.tdtu.edu.vn')) {
-                    localStorage.setItem(TOKEN_NAME, JSON.stringify(res.data));
-                    navigate('/home');
+                    // localStorage.setItem(TOKEN_NAME, JSON.stringify(res.data));
+                    // navigate('/home');
+                    postMethod('login', { email: res.data.email, name: res.data.name })
+                        .then((response) => {
+                            console.log(response);
+                            if (response.success) {
+                                localStorage.setItem(TOKEN_NAME, response.token);
+                                if (response.user.role === 'admin') {
+                                    localStorage.setItem(TOKEN_NAME, JSON.stringify(res.data));
+                                    // setIsLogin(true);
+                                    // setIsAdmin(true);
+                                    navigate('/admin');
+                                } else {
+                                    // setIsLogin(true);
+                                    navigate('/');
+                                }
+                            } else {
+                                Swal.fire({
+                                    title: 'Error',
+                                    text: response.message,
+                                    icon: 'error',
+                                });
+                            }
+                        })
+                        .catch((err) => {
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Invalid Username Or Password',
+                                icon: 'error',
+                            });
+                        });
                 } else {
                     Swal.fire({
                         title: 'Error',

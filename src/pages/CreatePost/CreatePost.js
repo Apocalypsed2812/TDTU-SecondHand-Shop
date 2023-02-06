@@ -3,14 +3,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 // import { Link } from 'react-router-dom';
 import styles from './CreatePost.module.scss';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
-// import { getMethod } from '~/utils/fetchData';
+import { postMethod } from '~/utils/fetchData';
 import avatar from '~/assets/images/avatar_post.jpg';
 
 const cx = classNames.bind(styles);
 
 function CreatePost() {
+    //Thêm dữ liệu
+    const handleAddPost = (e) => {
+        e.preventDefault();
+        const body = new FormData(e.target);
+        postMethod('post/add', body)
+            .then((res) => {
+                if (res.success) {
+                    // setProducts([...products, res.product]);
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Add post successfully',
+                        icon: 'success',
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error',
+                        text: res.message,
+                        icon: 'error',
+                    });
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
     return (
         <>
             <div className={cx('container')}>
@@ -49,24 +76,25 @@ function CreatePost() {
                                     Sold
                                 </button>
                             </div>
-                            <input type="text" id="title" />
+                            <input type="text" id="title" name="title" />
                             <div className={cx('container__form-group')}>
                                 <label htmlFor="merchandise">Merchandise Type</label>
-                                <select id="merchandise">
+                                <select id="merchandise" name="merchandise">
                                     <option>Matiral</option>
                                 </select>
                             </div>
                             <div className={cx('container__form-group')}>
                                 <label htmlFor="price">Price</label>
-                                <input type="text" id="price" />
+                                <input type="text" id="price" name="price" />
                             </div>
                             <div className={cx('container__form-group')}>
                                 <label htmlFor="description" className={cx('label__des')}>
                                     Description
                                 </label>
-                                <textarea rows="20" id="description" />
+                                <textarea rows="20" id="description" name="description" />
                             </div>
                         </div>
+                        <button onClick={handleAddPost}>Add</button>
                     </div>
                 </form>
             </div>

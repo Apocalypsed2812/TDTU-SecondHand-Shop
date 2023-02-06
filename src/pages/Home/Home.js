@@ -10,19 +10,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 // import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 // import { getMethod } from '~/utils/fetchData';
 import avatar from '~/assets/images/avatar_post.jpg';
+import { GlobalState } from '~/context/GlobalState';
 // import { TOKEN_NAME } from '~/credentials';
 
 const cx = classNames.bind(styles);
 
 function Home() {
+    const state = useContext(GlobalState);
+    const [posts, setPosts] = state.UserAPI.posts;
+
     const [showModalPost, setShowModalPost] = useState(false);
+    const [name, setName] = useState('');
+    const [quantity, setQuantity] = useState('');
+    const [price, setPrice] = useState('');
 
     const hideModalPost = () => {
         setShowModalPost(false);
+    };
+
+    const handleShowPostDetail = (e) => {
+        setName(e.target.getAttribute('data-name'));
+        setPrice(e.target.getAttribute('data-price'));
+        setShowModalPost(true);
     };
 
     // useEffect(() => {
@@ -67,32 +80,39 @@ function Home() {
                     </div>
                     <button className={cx('header__button')}>Search</button>
                 </div>
-                <div className={cx('posts')}>
-                    <div className={cx('posts__header')}>
-                        <div className={cx('posts__header-left')}>
-                            <img src={avatar} alt="" className={cx('posts__header-img')} />
-                            <div className={cx('posts__header-left-avatar')}>
-                                <p>Trần Thái Bảo</p>
-                                <p>8/10/2022</p>
+                {posts.map((item, index) => (
+                    <div className={cx('posts')} key={index}>
+                        <div className={cx('posts__header')}>
+                            <div className={cx('posts__header-left')}>
+                                <img src={avatar} alt="" className={cx('posts__header-img')} />
+                                <div className={cx('posts__header-left-avatar')}>
+                                    <p>{item.name}</p>
+                                    <p>8/10/2022</p>
+                                </div>
+                            </div>
+                            <div className={cx('posts__header-right')}>
+                                <FontAwesomeIcon className={cx('header__item-icon')} icon={faEllipsis} />
                             </div>
                         </div>
-                        <div className={cx('posts__header-right')}>
-                            <FontAwesomeIcon className={cx('header__item-icon')} icon={faEllipsis} />
+                        <img src="/images/hp.jpg" alt="" className={cx('posts__img')} />
+                        <div className={cx('posts__content')}>
+                            <span className={cx('posts__like')}>Like</span>
+                            <span>Comment</span>
+                            <p>12 lượt thích</p>
+                            <p className={cx('posts__title')}>{item.title}</p>
+                            <p>Price : {item.price} VND</p>
+                            <p>Merchandise type: Mertirial</p>
+                        </div>
+                        <div
+                            className={cx('posts__button')}
+                            onClick={handleShowPostDetail}
+                            data-name={item.name}
+                            data-price={item.price}
+                        >
+                            <p className={cx('posts__button-link')}>View Detail</p>
                         </div>
                     </div>
-                    <img src="/images/hp.jpg" alt="" className={cx('posts__img')} />
-                    <div className={cx('posts__content')}>
-                        <span className={cx('posts__like')}>Like</span>
-                        <span>Comment</span>
-                        <p>12 lượt thích</p>
-                        <p className={cx('posts__title')}>Post's title</p>
-                        <p>Price : XXXXX VND</p>
-                        <p>Merchandise type: Mertirial</p>
-                    </div>
-                    <div className={cx('posts__button')} onClick={() => setShowModalPost(true)}>
-                        <p className={cx('posts__button-link')}>View Detail</p>
-                    </div>
-                </div>
+                ))}
             </div>
 
             {showModalPost && (

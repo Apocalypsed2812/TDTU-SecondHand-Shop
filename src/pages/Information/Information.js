@@ -1,17 +1,44 @@
 import { faStar, faPen, faEye, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-// import { Link } from 'react-router-dom';
-import styles from './Information.module.scss';
-// import { useState, useEffect } from 'react';
-
-// import { getMethod } from '~/utils/fetchData';
-import avatar from '~/assets/images/avatar_post.jpg';
 import { Link } from 'react-router-dom';
+import styles from './Information.module.scss';
+import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
+
+import { postMethod } from '~/utils/fetchData';
+import avatar from '~/assets/images/avatar_post.jpg';
 
 const cx = classNames.bind(styles);
 
 function Information() {
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+
+    const handleEditInformation = (e) => {
+        e.preventDefault();
+        const body = new FormData(e.target);
+        postMethod('post/add', body)
+            .then((res) => {
+                if (res.success) {
+                    // setProducts([...products, res.product]);
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Edit information successfully',
+                        icon: 'success',
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error',
+                        text: res.message,
+                        icon: 'error',
+                    });
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
     return (
         <>
             <div className={cx('container')}>
@@ -43,51 +70,63 @@ function Information() {
                             </div>
                         </div>
                         <div className={cx('container__wrapper-choose')}>
-                            <button className={cx('container__wrapper-button')}>
+                            <button className={cx('container__wrapper-button')} onClick={handleEditInformation}>
                                 <FontAwesomeIcon icon={faPen} />
                             </button>
                         </div>
                         <div className={cx('container__wrapper-content')}>
-                            <div className={cx('container__form-group')}>
-                                <label>Email</label>
-                                <input type="text" value="ediphone@gmail.com" />
-                                <FontAwesomeIcon
-                                    icon={faEye}
-                                    className={cx('container__form-group-icon', 'hide-on-mobile')}
-                                />
-                            </div>
-                            <div className={cx('container__form-group')}>
-                                <label>Phone</label>
-                                <input type="text" value="123456789" />
-                                <FontAwesomeIcon
-                                    icon={faEye}
-                                    className={cx('container__form-group-icon', 'hide-on-mobile')}
-                                />
-                            </div>
-                            <div className={cx('container__form-group')}>
-                                <label>Gender</label>
-                                <input type="text" value="Male" />
-                                <FontAwesomeIcon
-                                    icon={faEye}
-                                    className={cx('container__form-group-icon', 'hide-on-mobile')}
-                                />
-                            </div>
-                            <div className={cx('container__form-group')}>
-                                <label>Birthday</label>
-                                <input type="text" value="18/03/2001" />
-                                <FontAwesomeIcon
-                                    icon={faEye}
-                                    className={cx('container__form-group-icon', 'hide-on-mobile')}
-                                />
-                            </div>
-                            <div className={cx('container__form-group')}>
-                                <label>Sell</label>
-                                <input type="text" value="No" />
-                                <FontAwesomeIcon
-                                    icon={faEye}
-                                    className={cx('container__form-group-icon', 'hide-on-mobile')}
-                                />
-                            </div>
+                            <form>
+                                <div className={cx('container__form-group')}>
+                                    <label>Email</label>
+                                    <input
+                                        type="text"
+                                        value={email}
+                                        name="email"
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    <FontAwesomeIcon
+                                        icon={faEye}
+                                        className={cx('container__form-group-icon', 'hide-on-mobile')}
+                                    />
+                                </div>
+                                <div className={cx('container__form-group')}>
+                                    <label>Phone</label>
+                                    <input
+                                        type="number"
+                                        value={phone}
+                                        name="phone"
+                                        onChange={(e) => setPhone(e.target.value)}
+                                    />
+                                    <FontAwesomeIcon
+                                        icon={faEye}
+                                        className={cx('container__form-group-icon', 'hide-on-mobile')}
+                                    />
+                                </div>
+                                <div className={cx('container__form-group')}>
+                                    <label>Gender</label>
+                                    <input type="text" value="Male" name="gender" />
+                                    <FontAwesomeIcon
+                                        icon={faEye}
+                                        className={cx('container__form-group-icon', 'hide-on-mobile')}
+                                    />
+                                </div>
+                                <div className={cx('container__form-group')}>
+                                    <label>Birthday</label>
+                                    <input type="text" value="18/03/2001" name="birthday" />
+                                    <FontAwesomeIcon
+                                        icon={faEye}
+                                        className={cx('container__form-group-icon', 'hide-on-mobile')}
+                                    />
+                                </div>
+                                <div className={cx('container__form-group')}>
+                                    <label>Sell</label>
+                                    <input type="text" value="No" />
+                                    <FontAwesomeIcon
+                                        icon={faEye}
+                                        className={cx('container__form-group-icon', 'hide-on-mobile')}
+                                    />
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
